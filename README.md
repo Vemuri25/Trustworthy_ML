@@ -3,6 +3,8 @@
 A machine learning monitoring project focused on model evaluation, feature drift detection, subgroup performance auditing, and automated testing.
 
 The project trains a Logistic Regression classifier on the Adult Census Income dataset and provides a Streamlit dashboard to explore model performance and simulated changes in feature distributions.
+## Deployment
+URL:https://trustworthymlutmsourcechatgptcom-dgwzerhybmmis2lflvxun8.streamlit.app/
 
 ## Project Highlights
 
