@@ -13,6 +13,20 @@ The project trains a Logistic Regression classifier on the Adult Census Income d
 - **Interactive dashboard:** Streamlit interface for exploring model metrics, drift reports, and subgroup results.
 - **Automated testing:** pytest tests executed through GitHub Actions.
 
+## Dashboard Screenshots
+
+### Monitoring Overview
+![Monitoring overview](docs/images/overview.png)
+
+### Feature Drift
+![Feature drift analysis](docs/images/feature-drift.png)
+
+### Model Performance
+![Model performance metrics](docs/images/model-performance.png)
+
+### Subgroup Audit
+![Subgroup performance audit](docs/images/subgroup-audit.png)
+
 ## Architecture
 
 ```text
