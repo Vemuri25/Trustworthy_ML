@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments and secrets
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Local datasets
+data/raw/*
+data/processed/*
+
+# Generated models and reports
+models/*
+reports/figures/*
+reports/metrics.json
+reports/classification_report.txt
+reports/subgroup_metrics.json
+reports/reference_profile.json
+reports/drift_report.json
+
+# Editors and operating system
+.DS_Store
+.vscode/
+.idea/
