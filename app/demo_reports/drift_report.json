@@ -1,0 +1,179 @@
+{
+  "method": "Population Stability Index (PSI)",
+  "thresholds": {
+    "low": "PSI < 0.10",
+    "warning": "0.10 <= PSI < 0.20",
+    "critical": "PSI >= 0.20"
+  },
+  "note": "Simulated shifts are controlled tests, not evidence of real-world drift or model performance degradation.",
+  "batches": {
+    "baseline_test_batch": {
+      "rows": 9769,
+      "features": {
+        "age": {
+          "psi": 0.001202209496432865,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "workclass": {
+          "psi": 0.004674349041707037,
+          "status": "low",
+          "current_missing_rate": 0.058859658102159894,
+          "reference_missing_rate": 0.05691910014588079,
+          "missing_rate_change": 0.001940557956279107
+        },
+        "education": {
+          "psi": 0.0012156928044237012,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "education-num": {
+          "psi": 0.0007143037784280595,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "marital-status": {
+          "psi": 0.0003371384714056391,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "occupation": {
+          "psi": 0.0015771030278857621,
+          "status": "low",
+          "current_missing_rate": 0.058859658102159894,
+          "reference_missing_rate": 0.057175031351572696,
+          "missing_rate_change": 0.0016846267505871981
+        },
+        "relationship": {
+          "psi": 0.0005160538049007363,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "capital-gain": {
+          "psi": 0.0,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "capital-loss": {
+          "psi": 0.0,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "hours-per-week": {
+          "psi": 0.00043054436376061174,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "native-country": {
+          "psi": 0.003987435632658052,
+          "status": "low",
+          "current_missing_rate": 0.018016173610400244,
+          "reference_missing_rate": 0.017428915107619073,
+          "missing_rate_change": 0.0005872585027811711
+        }
+      },
+      "features_warning_or_critical": 0,
+      "mean_psi": 0.0013322573110547695
+    },
+    "simulated_shift": {
+      "rows": 9769,
+      "features": {
+        "age": {
+          "psi": 7.1425275450762395,
+          "status": "critical",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "workclass": {
+          "psi": 0.004674349041707037,
+          "status": "low",
+          "current_missing_rate": 0.058859658102159894,
+          "reference_missing_rate": 0.05691910014588079,
+          "missing_rate_change": 0.001940557956279107
+        },
+        "education": {
+          "psi": 0.0012156928044237012,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "education-num": {
+          "psi": 0.0007143037784280595,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "marital-status": {
+          "psi": 0.0003371384714056391,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "occupation": {
+          "psi": 0.0015771030278857621,
+          "status": "low",
+          "current_missing_rate": 0.058859658102159894,
+          "reference_missing_rate": 0.057175031351572696,
+          "missing_rate_change": 0.0016846267505871981
+        },
+        "relationship": {
+          "psi": 0.0005160538049007363,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "capital-gain": {
+          "psi": 0.0,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "capital-loss": {
+          "psi": 0.0,
+          "status": "low",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "hours-per-week": {
+          "psi": 2.047471880710793,
+          "status": "critical",
+          "current_missing_rate": 0.0,
+          "reference_missing_rate": 0.0,
+          "missing_rate_change": 0.0
+        },
+        "native-country": {
+          "psi": 0.003987435632658052,
+          "status": "low",
+          "current_missing_rate": 0.018016173610400244,
+          "reference_missing_rate": 0.017428915107619073,
+          "missing_rate_change": 0.0005872585027811711
+        }
+      },
+      "features_warning_or_critical": 2,
+      "mean_psi": 0.8366383183953127
+    }
+  }
+}

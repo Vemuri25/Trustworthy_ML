@@ -1,0 +1,48 @@
+{
+  "sex": {
+    "Female": {
+      "count": 3259,
+      "accuracy": 0.8962872046640074,
+      "positive_class_recall": 0.7423822714681441,
+      "positive_class_precision": 0.5224171539961013
+    },
+    "Male": {
+      "count": 6510,
+      "accuracy": 0.7614439324116743,
+      "positive_class_recall": 0.8619119878603946,
+      "positive_class_precision": 0.5710455764075067
+    }
+  },
+  "race": {
+    "Amer-Indian-Eskimo": {
+      "count": 96,
+      "accuracy": 0.8229166666666666,
+      "positive_class_recall": 0.9230769230769231,
+      "positive_class_precision": 0.42857142857142855
+    },
+    "Asian-Pac-Islander": {
+      "count": 311,
+      "accuracy": 0.8070739549839229,
+      "positive_class_recall": 0.8658536585365854,
+      "positive_class_precision": 0.5916666666666667
+    },
+    "Black": {
+      "count": 968,
+      "accuracy": 0.8801652892561983,
+      "positive_class_recall": 0.7829457364341085,
+      "positive_class_precision": 0.5343915343915344
+    },
+    "Other": {
+      "count": 82,
+      "accuracy": 0.8902439024390244,
+      "positive_class_recall": 0.8,
+      "positive_class_precision": 0.5333333333333333
+    },
+    "White": {
+      "count": 8312,
+      "accuracy": 0.7967998075072185,
+      "positive_class_recall": 0.8460076045627376,
+      "positive_class_precision": 0.5659777424483307
+    }
+  }
+}

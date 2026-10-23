@@ -1,0 +1,21 @@
+{
+  "model": "Logistic Regression",
+  "positive_class": ">50K",
+  "train_rows": 39073,
+  "test_rows": 9769,
+  "features_before_encoding": 11,
+  "accuracy": 0.8064284983109837,
+  "balanced_accuracy": 0.8191172876578006,
+  "precision": 0.56391192450672,
+  "recall": 0.8434559452523525,
+  "f1": 0.6759211653813196,
+  "roc_auc": 0.9033923904886462,
+  "average_precision": 0.7607938281085829,
+  "excluded_model_features": [
+    "sex",
+    "race",
+    "fnlwgt"
+  ],
+  "random_state": 42,
+  "test_size": 0.2
+}

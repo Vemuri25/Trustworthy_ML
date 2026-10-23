@@ -7,9 +7,13 @@ import pandas as pd
 import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
-REPORT_PATH = ROOT / "reports" / "drift_report.json"
-METRICS_PATH = ROOT / "reports" / "metrics.json"
-SUBGROUP_PATH = ROOT / "reports" / "subgroup_metrics.json"
+DEMO_REPORTS = ROOT / "app" / "demo_reports"
+LOCAL_REPORTS = ROOT / "reports"
+IS_CLOUD = Path("/mount/src").exists()
+REPORT_DIR = DEMO_REPORTS if IS_CLOUD else LOCAL_REPORTS
+REPORT_PATH = REPORT_DIR / "drift_report.json"
+METRICS_PATH = REPORT_DIR / "metrics.json"
+SUBGROUP_PATH = REPORT_DIR / "subgroup_metrics.json"
 
 st.set_page_config(
     page_title="Trustworthy ML Monitor",
@@ -45,12 +49,15 @@ def refresh_drift():
 
 with st.sidebar:
     st.header("Controls")
-    st.write("Recalculate drift using the project's configured test batches.")
-    if st.button("Run drift monitor", type="primary"):
-        with st.spinner("Calculating drift..."):
-            if refresh_drift():
-                st.success("Drift report updated.")
-                st.rerun()
+    if IS_CLOUD:
+        st.info("Public demo mode: showing bundled report snapshots.")
+    else:
+        st.write("Recalculate drift using the project's configured test batches.")
+        if st.button("Run drift monitor", type="primary"):
+            with st.spinner("Calculating drift..."):
+                if refresh_drift():
+                    st.success("Drift report updated.")
+                    st.rerun()
 
     st.divider()
     st.caption("PSI thresholds")
@@ -210,4 +217,8 @@ with tab_fairness:
         )
 
 st.divider()
-st.caption("Trustworthy ML Monitor · Local development dashboard")
+st.caption(
+    "Trustworthy ML Monitor · Public demo snapshots"
+    if IS_CLOUD
+    else "Trustworthy ML Monitor · Local development dashboard"
+)
