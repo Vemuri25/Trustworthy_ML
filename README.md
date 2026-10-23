@@ -1,4 +1,7 @@
 # Trustworthy ML Monitor
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://trustworthymlutmsourcechatgptcom-dgwzerhybmmis2lflvxun8.streamlit.app/)
+
+[![Python Tests](https://github.com/Vemuri25/Trustworthy_ML/actions/workflows/tests.yml/badge.svg)](https://github.com/Vemuri25/Trustworthy_ML/actions/workflows/tests.yml)
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://trustworthymutmsourcechatgptcom-dgwzerhybmmis2lflvxun8.streamlit.app/)
 
 [![Python Tests](https://github.com/Vemuri25/Trustworthy_ML/actions/workflows/tests.yml/badge.svg)](https://github.com/Vemuri25/Trustworthy_ML/actions/workflows/tests.yml)
