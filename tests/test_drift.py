@@ -1,13 +1,7 @@
-import json
-import subprocess
-import sys
-from pathlib import Path
-
+import pandas as pd
 import pytest
 
-from src.trustworthy_ml.drift import calculate_psi
-
-ROOT = Path(__file__).resolve().parents[1]
+from src.trustworthy_ml.drift import calculate_psi, feature_drift
 
 
 def test_identical_distributions_have_near_zero_psi():
@@ -26,21 +20,24 @@ def test_psi_is_finite_when_a_bin_is_empty():
     assert psi > 0
 
 
-def test_drift_report_flags_simulated_shift():
-    result = subprocess.run(
-        [sys.executable, "-m", "src.trustworthy_ml.drift"],
-        cwd=ROOT,
-        capture_output=True,
-        text=True,
-    )
-    assert result.returncode == 0, result.stderr
+def test_drift_detector_flags_simulated_shift():
+    reference = {
+        "type": "numeric",
+        "edges": [20, 30, 40, 50, 60],
+        "reference_counts": [25, 25, 25, 25],
+        "reference_missing_rate": 0.0,
+    }
 
-    report_path = ROOT / "reports" / "drift_report.json"
-    report = json.loads(report_path.read_text())
+    # Balanced baseline: 25 observations in each reference bin.
+    baseline = pd.Series(([25] * 25) + ([35] * 25)
+                         + ([45] * 25) + ([55] * 25))
+    baseline_result = feature_drift(baseline, reference)
+    assert baseline_result["status"] == "low"
+    assert baseline_result["psi"] == pytest.approx(0.0, abs=1e-9)
 
-    baseline = report["batches"]["baseline_test_batch"]
-    shifted = report["batches"]["simulated_shift"]
+    # Shift all observations beyond the reference range.
+    shifted = pd.Series([75] * 100)
+    shifted_result = feature_drift(shifted, reference)
 
-    assert baseline["features_warning_or_critical"] == 0
-    assert shifted["features"]["age"]["status"] == "critical"
-    assert shifted["features"]["hours-per-week"]["status"] == "critical"
+    assert shifted_result["status"] == "critical"
+    assert shifted_result["psi"] >= 0.20
